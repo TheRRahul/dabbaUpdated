@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&family=Kumbh+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+.frame-2 {
+    display: flex;
+    flex-direction: column;
+    width: 166%;
+    align-items: flex-start;
+    gap: 130px;
+    padding: 136px;
+    position: absolute;
+    top: -300px;
+    left: 400px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 26px #00000040;
+}
+
+.overlap {
+    position: absolute;
+    width: 1053px;
+    height: 401px;
+    top: 667px;
+    left: 213px;
+}
+
+
+.qr_scan {
+    width: 1095px;
+    /* float: right; */
+    margin-left: 2040px;
+    position: absolute;
+    margin-top: 637px;
+    object-fit: cover;
+}
+
+.scan_div {
+/*    position: absolute;*/
+    width: 100%x;
+    height: 401px;
+    top: 667px;
+/*    left: 213px;*/
+}
+
+.text-wrapper h2{
+    position: relative;
+    align-self: stretch;
+    height: 43px;
+    margin-top: -1.00px;
+    font-family: "Montserrat", Helvetica;
+    font-weight: 700;
+    color: #3b352e;
+    font-size: 60px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.clear{
+    clear: all;
+}
+
+
+.scan-me {
+    font-family: "Montserrat", Helvetica;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 766px;
+    margin-left: 40px;
+    position: absolute;
+}
+
+
+
+
+.scan-me span{
+    font-size: 110px;
+}
+
+.frame-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 55px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.frame-3 {
+  display: inline-flex;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.frame-4 {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    align-items: flex-start;
+    gap: 6px;
+    position: relative;
+}
+
+.text-wrapper-2 h4 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1.00px;
+    margin-bottom: -25px;
+    font-family: "Montserrat", Helvetica;
+    font-weight: 500;
+    color: #636363;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.text-wrapper-3 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Montserrat", Helvetica;
+    font-weight: 700;
+    color: #3b352e;
+    font-size: 55px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+.frame-5 {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    align-items: flex-start;
+    gap: 6px;
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    width: 470px;
+    height: 470px;
+    top: 0px;
+    left: 0;
+}
+
+.mumbai-dabbawala {
+    position: absolute;
+    height: 1010px;
+    width: 750px;
+    top: 430px;
+    right: 299px;
+}
+
+ .ellipse {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -62px;
+  left: 191px;
+  background-color: #ffffff;
+  border-radius: 9.94px;
+  border: 4.42px solid;
+  border-color: #f4923d;
+}
+
+
+/* Shake animation */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Apply the shake animation */
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+
+
+/*  this is a responsive css  */
+@media screen and (max-width: 3840px) {
+  .frame-2 {
+    width: 151%;
+    }
+}
+
+
+@media screen and (max-width: 1920px) {
+    .footer-text {   
+        font-size: 42px;
+        margin-top: 86px;
+    }
+
+    .mumbai-dabbawala {
+    height: 500px;
+    width: 500px;
+    top: 184px;
+    right: 108px;
+    }
+
+   .refresh-btn {
+    bottom: 141px;
+    }   
+
+    .refresh-btn img {
+    width: 150px;
+    height: 150px;
+    }
+
+    .overlap {
+    width: 855px;
+    height: 359px;
+    top: 320px;
+    left: 43px;
+    }
+
+        .frame-2 {
+        padding: 52px;
+        width: 90%;
+        top: -109px;
+    left: 308px;
+    }
+
+    .text-wrapper h2 {
+    font-size: 39px;
+    }
+
+    .text-wrapper-3 {
+        font-size: 24px;
+    }
+
+    .text-wrapper-2 h4 {
+    font-size: 23px;
+    }
+
+    .frame-4 {
+    width: 423px;
+    }
+
+    .frame-3 {
+        gap: 22.69px;
+        width: 117%;
+        margin-bottom: -12px;
+        margin-top: -107px;
+    }
+
+    .frame-5 {
+    width: 330px;
+    }
+
+    .image {
+    width: 250px;
+    height: 250px;
+    top: -14px;
+    left: 104px;
+}
+
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Adjust the layout of the main container */
+    .frame-2 {
+        width: 76%;
+        padding: 20px;
+        top: 54px;
+        left: 24px;
+    }
+
+    /* Adjust text size for headings and paragraphs */
+    .text-wrapper h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .text-wrapper-2 h4 {
+        font-size: 20px;
+    }
+
+    .text-wrapper-3 {
+        font-size: 18px;
+    }
+
+    /* Adjust QR code section */
+    .mumbai-dabbawala {
+        height: 250px;
+        width: 250px;
+        top: 100px;
+        right: 50px;
+    }
+
+    /* Adjust button */
+    .refresh-btn {
+        position: absolute;
+        bottom: 56px;
+        left: 77%;
+        /* transform: translateX(-50%); */
+    }
+
+    .refresh-btn img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Adjust the frame-3 layout to stack columns */
+        .frame-3 {
+        display: block;
+        width: 100%;
+        margin-bottom: -10px;
+    }
+
+    .frame-4 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust the image size */
+        .image {
+        width: 90px;
+        height: 90px;
+        top: 12px;
+        left: 86%;
+        transform: translateX(-50%);
+    }
+
+    /* Adjust the text inside the frame */
+    .text-wrapper-3 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* QR code shake animation */
+    .mumbai-dabbawala {
+        animation: none; /* Disable shaking on mobile */
+    }
+
+    /* Adjust the layout of the footer text */
+    .footer-text {
+        font-size: 18px;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    /* Adjust the background ellipse for small screens */
+    .ellipse {
+        width: 12px;
+        height: 12px;
+        top: -30px;
+        left: 45%;
+    }
+
+    /* Hide extra large elements */
+    .overlap {
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+SS
+    /* Responsive typography and alignment */
+    .scan-me {
+        font-size: 20px;
+        margin-top: 365px;
+        margin-left: 0;
+        text-align: revert;
+        margin-bottom: -5px;
+    }
+
+    .frame-5 {
+        width: 100%;
+    }
+
+    /* Additional adjustments for very small screens (less than 480px) */
+    @media screen and (max-width: 480px) {
+        .text-wrapper h2 {
+            font-size: 24px;
+            height: 0px;
+        }
+
+        .text-wrapper-2 h4 {
+            font-size: 12px;
+        }
+
+        .text-wrapper-3 {
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .frame-3 {
+            gap: 10px;
+        }
+
+        .mumbai-dabbawala {
+            height: 200px;
+            width: 200px;
+            top: 50px;
+        }
+
+        .refresh-btn img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/fevi.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Station Selector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="drop-station.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="box2 heading para">
+            <h2>SELECT YOUR DROP STATION</h2>
+            <p>Select a drop station where the dabbawala will deliver your tiffin box to its final destination. At the drop station, the tiffins are carefully sorted based on their delivery codes and dispatched for last-mile delivery, ensuring they reach the right person on time.</p>
+            
+        </div>
+
+        <div class="box box3 station-sel">
+            <img src="images/stations-select.svg" alt="Image 2">
+            <img src="images/arrowgif.gif" class="gifarrow">
+            
+
+            <!-- This stays at the top of your body element -->
+            <div id="stationDisplayTop" class="station-display1">
+                <svg viewBox="0 0 500 100" xmlns="#">
+                    <path id="curvedPath" d="M50,80 C150,10 350,10 450,80" fill="transparent" stroke="none"/>
+                    <text>
+                        <textPath href="#curvedPath" startOffset="50%" text-anchor="middle" id="curvedStationText"></textPath>
+                    </text>
+                </svg>
+            </div>
+
+            <div class="text-overlay" id="dropStationLabel" class="station-label pickup-station" onclick="openPopup()">
+                <marquee behavior="scroll" direction="left" style="font-size: 58px; color: #fff; background: transparent; padding: 5px; margin-top: 10px;" scrollamount="20">
+                <h2>DROP STATION ?</h2>
+                </marquee>
+            </div>
+
+            <!-- Display selected station at the bottom -->
+            <div id="stationDisplayBottom" class="station-display2">
+                <svg viewBox="0 0 500 100" xmlns="#">
+                    <path id="curvedPathBottom" d="M50,20 C150,90 350,90 450,20" fill="transparent" stroke="none" />
+                    <text>
+                        <textPath href="#curvedPathBottom" startOffset="50%" text-anchor="middle" id="curvedStationTextBottom"></textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
+
+
+        <div class="box4 zoom-box">
+            <button id="startJourneyButton" onclick="TravelPage()">START JOURNEY&nbsp;&nbsp; <img class="arrow" src="images/arrow-1.png" /></button>
+        </div>
+    </div>
+
+
+<!-- stations selection menu-->
+
+    <div class="popup-overlay" id="popupOverlay" style="display: none">
+        <div class="popup-content">
+            
+            <!-- Inside the Popup Content -->
+            <div class="popup-section">
+                <div class="line">
+                    <h3>Western Line</h3>
+                    <button data-station="churchgate" data-marathi="चर्चगेट">CHURCHGATE</button>
+                    <button data-station="dadar" data-marathi="दादर">DADAR</button>
+                    <button data-station="bandra" data-marathi="वांद्रे">BANDRA</button>
+                    <button data-station="andheri" data-marathi="अंधेरी">ANDHERI</button>
+                    <button data-station="borivali" data-marathi="बोरिवली">BORIVALI</button>
+                    <button data-station="miraroad" data-marathi="मीरा रोड">MIRA ROAD</button>
+                    <button data-station="virar" data-marathi="विरार">VIRAR</button>
+                </div>
+                <div class="line">
+                    <h3>Central Line</h3>
+                    <button data-station="csmt" data-marathi="छत्रपती शिवाजी महाराज ट.">CSMT</button>
+                    <button data-station="byculla" data-marathi="भायखळा">BYCULLA</button>
+                    <button data-station="kurla" data-marathi="कुर्ला">KURLA</button>
+                    <button data-station="ghatkopar" data-marathi="घाटकोपर">GHATKOPAR</button>
+                    <button data-station="thane" data-marathi="ठाणे">THANE</button>
+                    <button data-station="dombivali" data-marathi="डोंबिवली">DOMBIVALI</button>
+                </div>
+                <div class="line">
+                    <h3>Harbor Line</h3>
+                    <button data-station="wadala" data-marathi="वडाळा">WADALA</button>
+                    <button data-station="vashi" data-marathi="वाशी">VASHI</button>
+                </div>
+            </div>
+
+            <button class="go-back" onclick="closePopup()">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        </div>
+    </div>
+<!-- stations selection menu end -->
+
+
+
+
+    <!-- translate -->
+
+<script>
+    const translations = {
+        "Select a drop station where the dabbawala will deliver your tiffin box to its final destination. At the drop station, the tiffins are carefully sorted based on their delivery codes and dispatched for last-mile delivery, ensuring they reach the right person on time.": "तुमचा ड्रॉप स्टेशन निवडा जिथे डबेवाला तुमचा डबा अंतिम ठिकाणी पोहोचवेल. ड्रॉप स्टेशनवर डबे त्यांच्या डिलिव्हरी कोडनुसार व्यवस्थित विभागले जातात व अंतिम वितरणासाठी पाठवले जातात, ज्यामुळे डबा योग्य व्यक्तीपर्यंत वेळेत पोहोचतो.",
+        "SELECT YOUR DROP STATION" : "आपले ड्रॉप स्टेशन निवडा",
+        "Western Line":"पश्चिम मार्ग",
+        "Central Line":"मध्य मार्ग",
+        "Harbor Line":"हार्बर मार्ग",
+        "PICK UP STATION": "वाहतूक स्टेशन",
+        "DROP STATION ?": "स्थानक निवडा ?",
+        "SELECT A DROP STATION": "शेवटचे स्टेशन निवडा",
+        "CSMT":"छत्रपती शिवाजी महाराज ट.",
+        "DADAR": "दादर",
+        "KURLA": "कुर्ला",
+        "THANE": "ठाणे",
+        "WADALA": "वडाळा",
+        "VASHI": "वाशी",
+        "CHURCHGATE": "चर्चगेट",
+        "BANDRA": "वांद्रे",
+        "ANDHERI": "अंधेरी",
+        "DOMBIVALI":"डोंबिवली",
+        "GHATKOPAR":"घाटकोपर",
+        "BYCULLA":"भायखळा",
+        "VIRAR":"विरार",
+        "MIRA ROAD":"मीरा रोड",
+        "BORIVALI":"बोरिवली",
+        "PICK UP STATION": "वाहतूक स्टेशन",
+        "NEXT": "पुढे जा",
+        "START JOURNEY":"प्रारंभ यात्रा "
+    };
+
+    // Specifically update the `<h2>` with the text containing <br>
+        // const h2Element = document.querySelector('h2');
+        // if (h2Element && h2Element.innerHTML === "SELECT YOUR<br>DROP STATION") {
+        //     h2Element.innerHTML = "आपले ड्रॉप स्टेशन<br> निवडा"; // Marathi translation with `<br>`
+        // }
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function translateToMarathi() {
+        if (getQueryParam('lang') === 'marathi') {
+            document.querySelectorAll('h2, p, h3, a, button').forEach(element => {
+                const originalText = element.textContent.trim();
+                if (translations[originalText]) {
+                    element.textContent = translations[originalText];
+                }
+            });
+        }
+    }
+
+    // Call the translation function on page load
+    translateToMarathi();
+</script>
+<!--  -->
+
+
+<script>
+// Track if a station is selected
+let stationSelected = false;
+
+// Open the popup
+function openPopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'flex';
+
+    // Add an event listener to detect clicks outside the popup content
+    popupOverlay.addEventListener('click', handleOutsideClick);
+}
+
+// Close the popup
+function closePopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'none';
+
+    // Remove the event listener after closing the popup
+    popupOverlay.removeEventListener('click', handleOutsideClick);
+}
+
+// Handle station selection and update the page
+document.querySelectorAll('.popup-section button').forEach(button => {
+    button.addEventListener('click', function() {
+        const selectedDropStation = this.getAttribute('data-station'); // Get the selected station's name
+        const lang = getQueryParam('lang'); // Check for language preference
+
+        if (lang === 'marathi') {
+            // Update the label to Marathi if language is Marathi
+            const marathiName = this.getAttribute('data-marathi');
+            document.getElementById('dropStationLabel').textContent = marathiName;
+        } else {
+            document.getElementById('dropStationLabel').textContent = selectedDropStation; // Default to English
+        }
+
+        // Store the selected station in localStorage
+        localStorage.setItem('selectedDropStation', selectedDropStation);
+
+        // Set the flag to true when a station is selected
+        stationSelected = true;
+
+        // Enable the "START JOURNEY" button
+        document.getElementById('startJourneyButton').classList.add('active');
+
+        // Close the popup after selecting the station
+        closePopup();
+    });
+});
+
+// Function to get URL query parameters
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Function to handle the start journey button
+function TravelPage() {
+    if (stationSelected) {
+        const lang = getQueryParam('lang');
+        window.location.href = `travel.html${lang ? '?lang=' + lang : ''}`; // Redirect to the travel page
+    }
+}
+
+// Function to handle clicks outside the popup content
+function handleOutsideClick(event) {
+    const popupContent = document.querySelector('.popup-content');
+    if (!popupContent.contains(event.target)) {
+        closePopup();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const selectedPickupStation = localStorage.getItem('selectedPickupStation');
+
+    if (selectedPickupStation) {
+        document.querySelectorAll('.popup-section button').forEach(button => {
+            if (button.getAttribute('data-station') === selectedPickupStation) {
+                button.classList.add('disabled');
+                button.disabled = true; // Disable the button
+            }
+        });
+    }
+});
+
+</script>
+
+
+
+
+<!-- popup station list code -->
+
+<script>
+
+    // Open the popup
+    function openPopup() {
+        const popupOverlay = document.getElementById('popupOverlay');
+        popupOverlay.style.display = 'flex';
+
+        // Add an event listener to detect clicks outside the popup content
+        popupOverlay.addEventListener('click', handleOutsideClick);
+    }
+
+    // Close the popup
+    function closePopup() {
+        const popupOverlay = document.getElementById('popupOverlay');
+        popupOverlay.style.display = 'none';
+
+        // Remove the event listener after closing the popup
+        popupOverlay.removeEventListener('click', handleOutsideClick);
+    }
+
+    // Function to handle clicks outside the popup content
+    function handleOutsideClick(event) {
+        const popupContent = document.querySelector('.popup-content');
+        if (!popupContent.contains(event.target)) {
+            closePopup();
+        }
+    }
+</script>
+<!-- popup station list code end-->
+
+
+
+
+
+
+          <!-- this is a animation effects -->
+ <style>
+    /* Element to animate */
+    .zoom-box {
+      animation: zoomIn 2s ease-in-out;
+    }
+
+    /* Keyframes for zoom-in animation */
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0;          /* Completely transparent */
+      }
+      50% {
+        transform: scale(1.2); /* Slight overshoot */
+        opacity: 1;            /* Fully visible */
+      }
+      100% {
+        transform: scale(1);   /* Final size */
+      }
+    }
+
+
+  </style>
+
+
+<script>
+function updateSelectedStation(stationName) {
+    // Check if the language is Marathi
+    const urlParams = new URLSearchParams(window.location.search);
+    const isMarathi = urlParams.get('lang') === 'marathi';
+
+    // If the language is Marathi, translate the station name
+    if (isMarathi) {
+        stationName = translateToMarathi(stationName);
+    }
+
+    // Update both the top and bottom with selected station
+    document.getElementById('stationDisplayTop').textContent = stationName;
+    document.getElementById('stationDisplayBottom').textContent = stationName;
+
+    // Update the main station display
+    document.getElementById('mainStation').textContent = stationName;
+
+    // Log for debugging purposes
+    console.log(`Station updated: ${stationName}`);
+}
+
+function translateToMarathi(stationName) {
+    // You can create a translation mapping for the station names here
+    const translationMap = {
+        "csmt": "छत्रपती शिवाजी महाराज ट.",
+        "dadar": "दादर",
+        "kurla": "कुर्ला",
+        "thane": "ठाणे",
+        "wadala": "वडाळा",
+        "vashi": "वाशी",
+        "churchgate": "चर्चगेट",
+        "bandra": "वांद्रे",
+        "andheri": "अंधेरी",
+        "dombivali": "डोंबिवली",
+        "ghatkopar": "घाटकोपर",
+        "byculla": "भायखळा",
+        "virar": "विरार",
+        "miraroad": "मीरा रोड",
+        "borivali": "बोरिवली"
+        // Add more stations as needed
+    };
+
+    return translationMap[stationName] || stationName; // Default to the original name if not found
+}
+
+document.querySelectorAll('.popup-section button').forEach(button => {
+    button.addEventListener('click', function () {
+        const selectedStation = this.getAttribute('data-station'); // Get selected station in English
+        const lang = getQueryParam('lang'); // Check the language preference
+
+        // Check language and set display text
+        const displayText = lang === 'marathi'
+            ? this.getAttribute('data-marathi') // Marathi translation
+            : selectedStation; // Default to English
+
+        // Update the top curved text
+        const curvedStationTextTop = document.getElementById("curvedStationText");
+        curvedStationTextTop.textContent = displayText;
+
+        // Update the bottom curved text
+        const curvedStationTextBottom = document.getElementById("curvedStationTextBottom");
+        curvedStationTextBottom.textContent = displayText;
+
+        // Log for debugging
+        console.log(`Selected station updated (Top & Bottom): ${displayText}`);
+
+        closePopup(); // Close the popup after selection
+    });
+});
+
+</script>
+
+</body>
+</html>

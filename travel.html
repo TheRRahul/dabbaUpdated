@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="images/fevi.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dabbawala Journey</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .main-container.blur {
+      filter: blur(5px);
+      opacity: 0.5;
+    }
+
+    .main-container.active {
+      filter: none;
+      opacity: 1;
+    }
+  </style>
+  <script>
+    setTimeout(function() {
+      window.location.href = 'index.html';
+    }, 600000);
+  </script>
+</head>
+<body>
+  <div class="background">
+    <div class="text_box">
+      <h3 class="journey_text">THE DABBA JOURNEY</h3>
+      <div class="frame-3">
+        <div class="text-wrapper-2">
+          <p class="pickupStation">Loading...</p>
+        </div>
+        <img class="arrow" src="https://c.animaapp.com/ocDlckid/img/arrow-2.svg" />
+        <div class="text-wrapper-2">
+          <p class="dropStation">Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="road_journey"></div>
+    <div class="class_main">
+      <div class="class58">
+        <div class="video-map">
+          <video id="travelVideo" autoplay muted loop style="width: 100%"></video>
+        </div>
+        <div class="circle-box">
+          <div class="img-class">
+            <img src="images/dabbawala-icon.svg" class="img-icon">
+          </div>
+          <div class="text-class">
+            <h2 class="txt_raju">Raju Dada</h2>
+            <p class="txt_raju_p">His Daily Routine</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="class38">
+        <div class="stime-stamp-top">
+          <!-- Timeline Item 1 -->
+          <div class="main-container" id="timeline-item-1">
+            <div class="container-img">
+              <img src="images/1.svg" class="clock-icon">
+            </div>
+            <div class="container-timeslot">
+              <h2 class="timeslot_head">10:00AM - 10:30AM</h2>
+              <p class="timeslot_p" data-translation-key="sorting-loading">Sorting & Loading Dabbas at <span class="pickupStation">Loading...</span></p>
+            </div>
+            <!-- Image container on the right -->
+            <div class="timeline-image">
+              <img src="images/dabbaicon.png" class="timeline-img">
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="main-container" id="timeline-item-2">
+            <div class="container-img">
+              <img src="images/2.svg" class="clock-icon">
+            </div>
+            <div class="container-timeslot">
+              <h2 class="timeslot_head">10:34AM - 11:04AM</h2>
+              <p class="timeslot_p" data-translation-key="sort-transport">Sort & transport the dabba from <span class="pickupStation">Loading...</span> to <span class="dropStation">Loading...</span></p>
+            </div>
+            <!-- Image container on the right -->
+            <div class="timeline-image">
+              <img src="images/dabbaicon.png" class="timeline-img">
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="main-container" id="timeline-item-3">
+            <div class="container-img">
+              <img src="images/3.svg" class="clock-icon">
+            </div>
+            <div class="container-timeslot">
+              <h2 class="timeslot_head">11:04AM - 11:30PM</h2>
+              <p class="timeslot_p" data-translation-key="unloading-sorting">Unloading & Sorting Dabbas at <span class="dropStation">Loading...</span></p>
+            </div>
+            <!-- Image container on the right -->
+            <div class="timeline-image">
+              <img src="images/dabbaicon.png" class="timeline-img">
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="main-container" id="timeline-item-4">
+            <div class="container-img">
+              <img src="images/4.svg" class="clock-icon">
+            </div>
+            <div class="container-timeslot">
+              <h2 class="timeslot_head">11:35AM - 12:30PM</h2>
+              <p class="timeslot_p" data-translation-key="delivering">Delivering Dabbas to their respective customers</p>
+            </div>
+            <!-- Image container on the right -->
+            <div class="timeline-image">
+              <img src="images/dabbaicon.png" class="timeline-img">
+            </div>
+          </div>
+
+          <!-- Timeline Item 5 -->
+          <div class="main-container" id="timeline-item-5">
+            <div class="container-img">
+              <img src="images/5.svg" class="clock-icon">
+            </div>
+            <div class="container-timeslot">
+              <h2 class="timeslot_head">1:15PM - 2:30PM</h2>
+              <p class="timeslot_p" data-translation-key="collecting">Collecting Empty Dabbas from the customers</p>
+            </div>
+            <!-- Image container on the right -->
+            <div class="timeline-image">
+              <img src="images/dabbaicon.png" class="timeline-img">
+            </div>
+          </div>
+
+          <!-- Timeline Item 6 -->
+          <div class="main-container" id="timeline-item-6">
+            <div class="container-img">
+              <img src="images/6.svg" class="clock-icon">
+            </div>
+            <div class="container-timeslot">
+              <h2 class="timeslot_head">2:30PM - 3:00PM</h2>
+              <p class="timeslot_p" data-translation-key="sorting-loading">Sorting & Loading Dabbas at <span class="dropStation">Loading...</span></p>
+            </div>
+            <!-- Image container on the right -->
+            <div class="timeline-image">
+              <img src="images/dabbaicon.png" class="timeline-img">
+            </div>
+          </div>
+
+          <!-- Timeline Item 7 -->
+          <div class="main-container" id="timeline-item-7">
+            <div class="container-img">
+              <img src="images/7.svg" class="clock-icon">
+            </div>
+            <div class="container-timeslot">
+              <h2 class="timeslot_head">3:30PM - 4:15PM</h2>
+              <p class="timeslot_p" data-translation-key="final-delivery">Delivering Dabbas to Destination Households/Caterers</p>
+            </div>
+            <!-- Image container on the right -->
+            <div class="timeline-image">
+              <img src="images/dabbaicon.png" class="timeline-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Station update script
+    document.addEventListener('DOMContentLoaded', function () {
+      const pickupStation = localStorage.getItem('selectedPickupStation') || 'Not Selected';
+      const dropStation = localStorage.getItem('selectedDropStation') || 'Not Selected';
+
+      document.querySelectorAll('.pickupStation').forEach(element => {
+        element.textContent = pickupStation;
+      });
+      document.querySelectorAll('.dropStation').forEach(element => {
+        element.textContent = dropStation;
+      });
+    });
+
+    // Translation dictionary
+    const translations = {
+      // Station names
+      "csmt": "छत्रपती शिवाजी महाराज ट.",
+      "dadar": "दादर",
+      "kurla": "कुर्ला",
+      "thane": "ठाणे",
+      "wadala": "वडाळा",
+      "vashi": "वाशी",
+      "churchgate": "चर्चगेट",
+      "bandra": "वांद्रे",
+      "andheri": "अंधेरी",
+      "dombivali": "डोंबिवली",
+      "ghatkopar": "घाटकोपर",
+      "byculla": "भायखळा",
+      "virar": "विरार",
+      "miraroad": "मीरा रोड",
+      "borivali": "बोरिवली",
+
+      // Headers and static text
+      "Raju Dada": "राजू दादा",
+      "His Daily Routine": "त्याचा रोजचा दिनक्रम",
+      "THE DABBA JOURNEY": "डब्ब्याचा प्रवास",
+
+      // Timeline times
+      "10:00AM - 10:30AM": "सकाळी १०:०० - १०:३०",
+      "10:34AM - 11:04AM": "सकाळी १०:३४ - ११:०४",
+      "11:04AM - 11:30PM": "सकाळी ११:०४ - ११:३०",
+      "11:35AM - 12:30PM": "सकाळी ११:३५ - दुपारी १२:३०",
+      "1:15PM - 2:30PM": "दुपारी १:१५ - २:३०",
+      "2:30PM - 3:00PM": "दुपारी २:३० - ३:००",
+      "3:30PM - 4:15PM": "दुपारी ३:३० - ४:१५",
+
+      // Translation keys for dynamic content
+      "sorting-loading": "{pickupStation} येथे डबे क्रमवारी लावणे आणि लोड करणे",
+      "sort-transport": "{pickupStation} ते {dropStation} पर्यंत डब्यांची वाहतूक",
+      "unloading-sorting": "{station} येथे डबे उतरवणे आणि क्रमवारी लावणे",
+      "delivering": "डबे त्यांच्या संबंधित ग्राहकांपर्यंत पोहोचवणे",
+      "collecting": "ग्राहकांकडून रिकामे डबे गोळा करणे",
+      "final-delivery": "डबे गंतव्यस्थानी (घरांमध्ये/केटरर्सकडे) पोहोचवणे"
+    };
+
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function translateToMarathi() {
+      const pickupStation = localStorage.getItem('selectedPickupStation') || 'Not Selected';
+      const dropStation = localStorage.getItem('selectedDropStation') || 'Not Selected';
+
+      // Translate static text
+      document.querySelectorAll('h2, h3, p').forEach(element => {
+        const originalText = element.textContent.trim();
+        
+        // Handle elements with translation keys
+        if (element.classList.contains('timeslot_p')) {
+          const translationKey = element.getAttribute('data-translation-key');
+          if (translationKey) {
+            let translatedText = translations[translationKey];
+            if (translatedText) {
+              // Replace placeholders with actual station names
+              translatedText = translatedText
+                .replace('{station}', translations[dropStation] || dropStation)
+                .replace('{pickupStation}', translations[pickupStation] || pickupStation)
+                .replace('{dropStation}', translations[dropStation] || dropStation);
+              element.innerHTML = translatedText;
+            }
+          }
+        } else if (translations[originalText]) {
+          element.innerHTML = translations[originalText];
+        }
+      });
+
+      // Translate station names
+      document.querySelectorAll('.pickupStation, .dropStation').forEach(element => {
+        const stationName = element.textContent.trim();
+        if (translations[stationName.toLowerCase()]) {
+          element.textContent = translations[stationName.toLowerCase()];
+        }
+      });
+    }
+
+    // Initialize translation if language is Marathi
+    window.onload = function() {
+      if (getQueryParam('lang') === 'marathi') {
+        translateToMarathi();
+      }
+    };
+  </script>
+
+  <!-- Timeline animation script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const timelineItems = document.querySelectorAll('.main-container');
+      let currentIndex = 0;
+      let forward = true;
+
+      function activateTimeline() {
+        timelineItems.forEach((item) => {
+          item.classList.remove('active');
+          item.classList.add('blur');
+          item.style.transform = "translateY(30px)";
+          item.style.opacity = '0.5';
+        });
+
+        const currentItem = timelineItems[currentIndex];
+        currentItem.classList.remove('blur');
+        currentItem.classList.add('active');
+        currentItem.style.transform = "translateY(20) scale(1.1)";
+        currentItem.style.opacity = '1';
+
+        if (currentIndex === 6) {
+          return;
+        }
+
+        if (forward) {
+          currentIndex++;
+          if (currentIndex >= timelineItems.length) {
+            forward = false;
+            currentIndex = timelineItems.length - 2;
+          }
+        } else {
+          currentIndex--;
+          if (currentIndex < 0) {
+            forward = true;
+            currentIndex = 1;
+          }
+        }
+
+        setTimeout(activateTimeline, 4289);
+      }
+
+      activateTimeline();
+    });
+  </script>
+
+  <!-- Video playback script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const pickupStation = localStorage.getItem('selectedPickupStation') || 'Not Selected';
+      const dropStation = localStorage.getItem('selectedDropStation') || 'Not Selected';
+      const travelVideo = document.getElementById('travelVideo');
+
+      let selectedSequence = [
+        `videos/${pickupStation}Pickup.mp4`,
+        `videos/${dropStation}Drop.mp4`,
+        `videos/${dropStation}Pickup.mp4`
+      ];
+
+      let currentVideoIndex = 0;
+
+      const playVideoSegment = () => {
+        if (currentVideoIndex < selectedSequence.length) {
+          travelVideo.src = selectedSequence[currentVideoIndex];
+          travelVideo.load();
+          travelVideo.play();
+
+          setTimeout(() => {
+            travelVideo.pause();
+            currentVideoIndex++;
+            playVideoSegment();
+          }, 10000);
+        }
+      };
+
+      playVideoSegment();
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+    });
+
+    function goBackToHomePage() {
+        // Redirect to the first page or home
+        window.location.href = 'invoice.html';
+    }
+
+    setTimeout(function() {
+      const lang = getQueryParam('lang');
+      window.location.href = `invoice.html${lang ? '?lang=' + lang : ''}`; 
+    }, 30000);
+  </script>
+</body>
+</html>
