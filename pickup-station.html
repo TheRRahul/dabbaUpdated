@@ -11,9 +11,7 @@
 </head>
 
 <body>
-     <audio id="stationAudio" preload="auto" autoplay>
-        <source src="/voice-station.mp3" type="audio/mp3">
-    </audio>
+    <audio id="pageLoadAudio" src="sound/voice-station.mp3" autoplay preload="auto"></audio>
 
     <div class="container">
         <!-- <div class="box box1">
@@ -45,8 +43,9 @@
                 </svg>
             </div>
 
+
             <div class="text-overlay" id="pickupStationLabel" class="station-label pickup-station" onclick="openPopup()">
-               <marquee behavior="scroll" direction="left" style="font-size: 58px; color: #fff; background: transparent; padding: 5px; margin-top: 10px;" scrollamount="20">
+               <marquee behavior="scroll" direction="left" style="font-size: 58px; color: #fff; background: transparent; padding: 5px; margin-top: 10px;" scrollamount="25" scrolldelay="0">
                     <h2>PICK UP STATION ?</h2>
                 </marquee>
             </div>
@@ -288,45 +287,77 @@
 
 
 <script>
-function updateSelectedStation(stationName) {
-    // Check if the language is Marathi
-    const urlParams = new URLSearchParams(window.location.search);
-    const isMarathi = urlParams.get('lang') === 'marathi';
+ // Define default station names in Hindi
+const hindiStationNames = {
+    "churchgate": "चर्चगेट",
+    "dadar": "दादर",
+    "bandra": "बांद्रा",
+    "andheri": "अंधेरी",
+    "borivali": "बोरीवली",
+    "miraroad": "मीरा रोड",
+    "virar": "विरार",
+    "csmt": "छत्रपति शिवाजी महाराज टर्मिनस",
+    "byculla": "भायखला",
+    "kurla": "कुर्ला",
+    "ghatkopar": "घाटकोपर",
+    "thane": "ठाणे",
+    "dombivali": "डोंबिवली",
+    "wadala": "वडाला",
+    "vashi": "वाशी"
+    // Add more stations as needed
+};
 
-    // If the language is Marathi, translate the station name
-    if (isMarathi) {
-        stationName = translateToMarathi(stationName);
-    }
+// Set a default station name in Hindi
+function setDefaultStationInHindi() {
+    const defaultStation = ""; // Default station in English
+    const hindiStation = hindiStationNames[defaultStation] || defaultStation;
 
-    // Update both the top and bottom with selected station
-    document.getElementById('stationDisplayTop').textContent = stationName;
-    document.getElementById('stationDisplayBottom').textContent = stationName;
-
-    // Update the main station display
-    document.getElementById('mainStation').textContent = stationName;
-
-    // Log for debugging purposes
-    console.log(`Station updated: ${stationName}`);
+    // Update the top curved text
+    const curvedStationTextTop = document.getElementById("curvedStationText");
+        curvedStationTextTop.textContent = hindiStation;
 }
 
-function translateToMarathi(stationName) {
-    // You can create a translation mapping for the station names here
+// Call the function on page load
+document.addEventListener('DOMContentLoaded', setDefaultStationInHindi);
+
+</script>
+
+
+<script>
+function updateSelectedStation(stationName) {
+    // Translate the station name to Hindi for the top display
+    const stationNameHindi = translateToHindi(stationName);
+
+    // Update the top text with the Hindi translation
+    const curvedStationTextTop = document.getElementById("curvedStationText");
+    curvedStationTextTop.textContent = stationNameHindi;
+
+    // Update the bottom text with the English station name
+    const curvedStationTextBottom = document.getElementById("curvedStationTextBottom");
+    curvedStationTextBottom.textContent = stationName;
+
+    // Log for debugging
+    console.log(`Top (Hindi): ${stationNameHindi}, Bottom (English): ${stationName}`);
+}
+
+function translateToHindi(stationName) {
+    // Create a translation mapping for station names to Hindi
     const translationMap = {
-        "csmt": "छत्रपती शिवाजी महाराज ट.",
+        "csmt": "छत्रपति शिवाजी महाराज ट.",
         "dadar": "दादर",
         "kurla": "कुर्ला",
         "thane": "ठाणे",
-        "wadala": "वडाळा",
+        "wadala": "वडाला",
         "vashi": "वाशी",
         "churchgate": "चर्चगेट",
-        "bandra": "वांद्रे",
+        "bandra": "बांद्रा",
         "andheri": "अंधेरी",
         "dombivali": "डोंबिवली",
         "ghatkopar": "घाटकोपर",
-        "byculla": "भायखळा",
+        "byculla": "भायखला",
         "virar": "विरार",
         "miraroad": "मीरा रोड",
-        "borivali": "बोरिवली"
+        "borivali": "बोरीवली"
         // Add more stations as needed
     };
 
@@ -336,45 +367,48 @@ function translateToMarathi(stationName) {
 document.querySelectorAll('.popup-section button').forEach(button => {
     button.addEventListener('click', function () {
         const selectedStation = this.getAttribute('data-station'); // Get selected station in English
-        const lang = getQueryParam('lang'); // Check the language preference
 
-        // Check language and set display text
-        const displayText = lang === 'marathi'
-            ? this.getAttribute('data-marathi') // Marathi translation
-            : selectedStation; // Default to English
+        // Update the displays
+        updateSelectedStation(selectedStation);
 
-        // Update the top curved text
-        const curvedStationTextTop = document.getElementById("curvedStationText");
-        curvedStationTextTop.textContent = displayText;
-
-        // Update the bottom curved text
-        const curvedStationTextBottom = document.getElementById("curvedStationTextBottom");
-        curvedStationTextBottom.textContent = displayText;
-
-        // Log for debugging
-        console.log(`Selected station updated (Top & Bottom): ${displayText}`);
-
-        closePopup(); // Close the popup after selection
+        // Close the popup after selection
+        closePopup();
     });
 });
 </script>
 
 
- <!-- JavaScript to play the sound when the page loads -->
-   <script>
-        // Play audio when the page loads
-        window.onload = function () {
-            const audio = document.getElementById('stationAudio');
-            audio.play().catch((error) => {
-                console.error('Audio play failed:', error);
-            });
-        };
 
-        // Play audio every 20 seconds
-        // 20 seconds
-    </script>
-<!-- curve -->
+<script>
+  // Function to play the audio
+  function playAudio(audioFile) {
+    const audio = document.getElementById('pageLoadAudio');
+    audio.src = audioFile;  // Set the audio file based on the parameter
+    audio.play().catch(error => {
+      console.warn('Autoplay blocked by browser. Audio did not play.', error);
+    });
+  }
 
+  // Check for lang query parameter and decide which audio to play
+  window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);  // Get URL query parameters
+    const lang = urlParams.get('lang');  // Get the value of 'lang'
+
+    // Determine the audio file based on the lang parameter
+    let audioFile = 'sound/voice-station.mp3';  // Default audio file
+    if (lang === 'marathi') {
+      audioFile = 'sound/voice-station-marathi.mp3';  // Marathi audio file if lang=marathi
+    }
+
+    // Play the audio immediately
+    playAudio(audioFile);
+
+    // Set an interval to play the sound every 10 seconds (10000ms)
+    setInterval(() => {
+      playAudio(audioFile);
+    }, 10000);  // 10000ms = 10 seconds
+  });
+</script>
 
 </body>
 </html>

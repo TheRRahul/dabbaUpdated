@@ -16,6 +16,8 @@
 </head>
 <body>
 
+    <audio id="pageLoadAudio" src="sound/door-bell-sound.mp3" autoplay preload="auto"></audio>
+
   <!-- main section -->
     <div class="background">
 
@@ -58,7 +60,8 @@
         <div class="scan_div">
           <div class="mumbai-dabbawala" id="qrcode">
             <p class="scan-me">
-                <span>Scan Me</span> <br> <span style="font-size:58px; color: #87643a;">To Start Your Dabba Service</span>
+                <span>Scan Me</span> 
+                 <span>To Start Your Dabba Service</span>
             </p>
           </div>
           <!-- <div>
@@ -88,7 +91,7 @@
 
     </div>
     
-  <!-- main section end -->
+<!-- main section end -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
@@ -129,8 +132,8 @@
 
         // QR code options
         const options = {
-            width: window.innerWidth < 768 ? 150 : 750, // Set width to 300px for small screens (mobile) and 750px for larger screens
-            height: window.innerWidth < 768 ? 150 : 750, // Same for height
+            width: window.innerWidth < 1920 ? 150 : 300, // Set width to 300px for small screens (mobile) and 750px for larger screens
+            height: window.innerWidth < 1920 ? 150 : 300, // Same for height
             color: {
                 dark: "#574d41", // Dark color for the QR code itself
                 light: "#00000000" // Transparent background
@@ -225,8 +228,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const endDateTextMr = `${nextMonthMarathi} ${nextMonthDayMr}, ${nextYearMr}`;
 
   // Duration text with <br> for line breaks
-  const durationText = `( ${startDateText} to<br>${endDateText} )`;
-  const durationTextMr = `( ${startDateTextMr} ते<br>${endDateTextMr} )`;
+  const durationText = `${startDateText} to ${endDateText} `;
+  const durationTextMr = `${startDateTextMr} ते ${endDateTextMr} `;
 
   const urlParams = new URLSearchParams(window.location.search);
   const lang = urlParams.get('lang');
@@ -415,6 +418,27 @@ animation: spin 5s linear ;
       }
     }
   </style>
+
+  <script>
+  // Function to play the audio
+  function playAudio() {
+    const audio = document.getElementById('pageLoadAudio');
+    audio.play().catch(error => {
+      console.warn('Autoplay blocked by browser. Audio did not play.', error);
+    });
+  }
+
+  // Try to autoplay the audio on page load
+  window.addEventListener('load', () => {
+    // Play immediately on page load
+    playAudio();
+
+    // Set an interval to play the sound every 10 seconds (10000ms)
+    setInterval(() => {
+      playAudio();
+    }, 20000);  // 10000ms = 10 seconds
+  });
+</script>
 
 </body>
 </html>

@@ -504,7 +504,7 @@ body {
 }
 
 .stime-stamp-top {
-    margin-top: -270px;
+    margin-top: -350px;
     transform: translateX(23px);
     padding-right: 222px;
 }
@@ -615,12 +615,10 @@ body {
 }
 
 .timeline-img {
-    width: 80px;
+    width: 150px;
     height: auto;
     margin-right: -154px;
 }
-
-
 
 
 .pd-bg-img {
@@ -1140,11 +1138,19 @@ body {
   }
 
   .text-right {
-    margin-top: -372px;
+    margin-top: -495px;
   }
 
+  .btn-next_1 button {
+    float: right;
+    padding: 29px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 79px;
+    margin-right: 100px;}
+
   .cycle img {
-    width: 550px;
+    width: 370px;
   }
 
   .ftr_btn {
@@ -1171,10 +1177,13 @@ body {
     font-size: 38px;
   }
 
-  .video-map {
-   height: 708px;
-   border: 10px solid #e1ca9e;
-  }
+.video-map {
+        height: 626px;
+    }
+
+    .video-map {
+    margin-top: 30px;
+    }
 
       .stime-stamp-top {
         margin-top: -70px;
@@ -1188,12 +1197,22 @@ body {
     font-size: 18px;
   }
 
-  .circle-box {
-    width: 35%;
-    padding: 8px;
-    bottom: 95%;
-    margin-right: -103px;
-  }
+    .circle-box {
+        width: 35%;
+        padding: 8px;
+        bottom: 83%;
+        margin-right: -103px;
+    }
+    .frame-3 {
+    margin-bottom: 0px;
+}
+
+.stime-stamp-top {
+    padding-right: 30px;
+}
+.timeline-img {
+    width: 37px;
+}
 
   .txt_raju {
     font-size: 31px;

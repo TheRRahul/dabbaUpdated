@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Gilda+Display&family=Kumbh+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 
 body {
@@ -9,7 +10,8 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    position: relative; /* Ensure proper layering */
+    position: relative;
+ /* Ensure proper layering */
     overflow: hidden;
 }
 
@@ -24,199 +26,206 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(5px); /* Adjust the blur radius as needed */
-    z-index: -1; /* Ensure it stays behind the content */
+    filter: blur(5px);
+ /* Adjust the blur radius as needed */
+    z-index: -1;
+ /* Ensure it stays behind the content */;
 }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 95%;
-    }
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
 
-    .box {
-        position: relative;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 55%;
-    }
+.box {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+}
 
-    .box2 {
-        width: 28%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 1420px;
-    }
+.box2 {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1420px;
+}
 
-    .box4 {
-        width: 28%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 1420px;
-    }
+.box4 {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1420px;
+}
 
-    .box img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;    }
+.box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 
-    .text-overlay {
-        position: absolute;
+.text-overlay {
+    position: absolute;
        /* top:-10%;
         left: 50%;
         transform: translate(-50%, -50%);*/
-        color: white;
-        font-size: 68px;
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-        text-align: center;
-        cursor: pointer;
-        text-transform: uppercase;
-        width: 50%;
-    }
+    color: white;
+    font-size: 68px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 50%;
+}
 
-    .slider-container {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 60%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        transition: right 0.5s ease;
-        padding: 20px;
-        z-index: 1000;
-    }
+.slider-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    transition: right 0.5s ease;
+    padding: 20px;
+    z-index: 1000;
+}
 
-    .slider-header {
-        font-size: 90px;
-        font-family: "Lexend Deca";
-        color: white;
-        margin-bottom: 20px;
-        text-align: center;
-        font-weight: 600;
-    }
+.slider-header {
+    font-size: 90px;
+    font-family: "Lexend Deca";
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
 
-    .slider-option {
-        font-family: "Lexend Deca";
-        padding: 50px;
-        font-size: 65px;
-        font-weight: bold;
-        color: white;
-        background: none;
-        cursor: pointer;
-        border: 2px solid #fff;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        transition: background-color 0.3s ease;
-    }
+.slider-option {
+    font-family: "Lexend Deca";
+    padding: 50px;
+    font-size: 65px;
+    font-weight: bold;
+    color: white;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
 
-    .slider-option:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
+.slider-option:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-    .slider-option.disabled {
-        background-color: rgba(128, 128, 128, 0.5);
-        cursor: not-allowed;
-    }
+.slider-option.disabled {
+    background-color: rgba(128, 128, 128, 0.5);
+    cursor: not-allowed;
+}
 
-    .close-btn {
-        position: absolute;
-        top: 30px;
-        right: 80px;
-        font-size: 80px;
-        font-weight: bold;
-        color: white;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.5);
-        border: 3px solid white;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1010;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid white;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1010;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
 
-    .close-btn:hover {
-        background-color: rgba(255, 255, 255, 0.3); /* Light background on hover */
-        border-color: rgba(255, 255, 255, 0.7); /* Lighten the border on hover */
-    }
+.close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+ /* Light background on hover */
+    border-color: rgba(255, 255, 255, 0.7);
+ /* Lighten the border on hover */;
+}
 
-    .heading h2 {
-        text-align: left;
-        font-family: "Lexend Deca";
-        font-size: 61px;
-        font-weight: 600;
-        color: #945B2B;
+.heading h2 {
+    text-align: left;
+    font-family: "Lexend Deca";
+    font-size: 61px;
+    font-weight: 600;
+    color: #945B2B;
         /* left: 10px; */
         /* margin-left: -352px; */
-        width: 1022px;
-        margin-bottom: -7px;
-    }
+    width: 1022px;
+    margin-bottom: -7px;
+}
 
-    .para p {
-        text-align: justify;
-        font-family: "Lexend Deca";
-        font-size: 40px;
-        font-weight: 500;
-        color: #000;
-        padding: 0px 5px;
-    }
+.para p {
+    text-align: justify;
+    font-family: "Lexend Deca";
+    font-size: 40px;
+    font-weight: 500;
+    color: #000;
+    padding: 0px 5px;
+}
 
-    #startJourneyButton {
-        font-family: "Lexend Deca";
-        margin-top: 20px;
-        padding: 31px 49px;
-        font-size: 54px;
-        font-weight: 600;
-        color: white;
-        background-color: #B6B6B6;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        opacity: 0.5;
-        pointer-events: none;
-        width: 96%;
+#startJourneyButton {
+    font-family: "Lexend Deca";
+    margin-top: 20px;
+    padding: 31px 49px;
+    font-size: 54px;
+    font-weight: 600;
+    color: white;
+    background-color: #B6B6B6;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    pointer-events: none;
+    width: 96%;
 /*        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);*/
-box-shadow: 10px 5px 5px black;
-    }
+    box-shadow: 10px 5px 5px black;
+}
 
-    #startJourneyButton.active {
-        background-color: #BE4747; /* Active blue color */
-        opacity: 1;
-        pointer-events: auto; /* Enable clicks */
-    }
+#startJourneyButton.active {
+    background-color: #BE4747;
+ /* Active blue color */
+    opacity: 1;
+    pointer-events: auto;
+ /* Enable clicks */;
+}
 
-    .arrow {
-      position: relative;
-      width: 55px;
-      height: 55px;
-      margin-right: -2px;
-    }
+.arrow {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    margin-right: -2px;
+}
 
-    .popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
 .popup-content {
     background: #fff;
@@ -231,27 +240,27 @@ box-shadow: 10px 5px 5px black;
     border-radius: 30px;
 }
 
-    .popup-content h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
+.popup-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-    .popup-section {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
-    }
+.popup-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
 
-    .line {
-        flex: 1;
-        text-align: center;
-        margin: 0 10px;
-    }
+.line {
+    flex: 1;
+    text-align: center;
+    margin: 0 10px;
+}
 
-    .line h3 {
-        font-size: 52px;
-        margin-bottom: 57px;
-    }
+.line h3 {
+    font-size: 52px;
+    margin-bottom: 57px;
+}
 
 .line button {
     /* display: block; */
@@ -268,15 +277,18 @@ box-shadow: 10px 5px 5px black;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-    .line button:hover {
-        background: #3a3a7c;
-    }
+.line button:hover {
+    background: #3a3a7c;
+}
 
-    button.disabled {
-        background-color: gray; /* Gray background for disabled buttons */
-        cursor: not-allowed;    /* Change cursor to indicate non-clickable */
-        opacity: 0.5;           /* Reduce opacity for visual clarity */
-    }
+button.disabled {
+    background-color: gray;
+ /* Gray background for disabled buttons */
+    cursor: not-allowed;
+    /* Change cursor to indicate non-clickable */
+    opacity: 0.5;
+           /* Reduce opacity for visual clarity */;
+}
 
     /* Popup styling */
 .popup {
@@ -284,7 +296,8 @@ box-shadow: 10px 5px 5px black;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px; /* Adjust as needed */
+    width: 400px;
+ /* Adjust as needed */
     padding: 20px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -300,8 +313,10 @@ box-shadow: 10px 5px 5px black;
 /* Go Back button styling */
 .go-back {
     position: absolute;
-    bottom: 20px; /* Adjust the position inside the popup */
-    right: 20px; /* Adjust the position inside the popup */
+    bottom: 20px;
+ /* Adjust the position inside the popup */
+    right: 20px;
+ /* Adjust the position inside the popup */
     width: 80px;
     height: 80px;
     background: #b33a3a;
@@ -321,60 +336,63 @@ box-shadow: 10px 5px 5px black;
 }
 
 .go-back i {
-    font-size: 35px; /* Arrow icon size */
+    font-size: 35px;
+ /* Arrow icon size */
     color: white;
 }
 
 
 /**/
-.gifarrow{
+.gifarrow {
     position: absolute;
     rotate: 180deg;
     width: 112px;
     margin-top: 346px;
 }
 
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: red;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
-    .close-popup {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-        background: red;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
+.close-popup:hover {
+    background: darkred;
+}
 
-    .close-popup:hover {
-        background: darkred;
-    }
+.station-sel h2 {
+    font-family: "Lexend Deca";
+    font-size: 76px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 100px;
+}
 
-    .station-sel h2 {
-        font-family: "Lexend Deca";
-        font-size: 76px;
-        font-weight: 600;
-        color: #fff;
-        margin-bottom: 100px;
-    }
-
-    button.disabled {
-    background-color: gray; /* Gray background for disabled buttons */
-    cursor: not-allowed;    /* Change cursor to indicate non-clickable */
-    opacity: 0.5;           /* Reduce opacity for visual clarity */
-    }
+button.disabled {
+    background-color: gray;
+ /* Gray background for disabled buttons */
+    cursor: not-allowed;
+    /* Change cursor to indicate non-clickable */
+    opacity: 0.5;
+           /* Reduce opacity for visual clarity */;
+}
 
 
 
 /*marqueee*/
-.marquee h2{
+.marquee h2 {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -390,12 +408,11 @@ box-shadow: 10px 5px 5px black;
     color: #ff0000;
 }
 
-
-
 @keyframes marquee {
     from {
         transform: translateX(100%);
     }
+
     to {
         transform: translateX(-100%);
     }
@@ -413,7 +430,8 @@ box-shadow: 10px 5px 5px black;
     text-align: center;
     padding: 20px;
     margin: 10px 0;
-    display: none;  /* Hide by default */
+    display: none;
+  /* Hide by default */
     width: 100%;
     color: #c3c3c3c;
     position: absolute;
@@ -426,7 +444,8 @@ box-shadow: 10px 5px 5px black;
     text-align: center;
     padding: 20px;
     margin: 10px 0;
-    display: none;  /* Hide by default */
+    display: none;
+  /* Hide by default */
     width: 100%;
     color: #c3c3c3c;
     position: absolute;
@@ -440,7 +459,8 @@ box-shadow: 10px 5px 5px black;
 
 .station-display1 text {
     font-size: 28px;
-    fill: #000; /* Text color */
+    fill: #000;
+ /* Text color */
     font-weight: bold;
 }
 
@@ -451,7 +471,8 @@ box-shadow: 10px 5px 5px black;
 
 .station-display2 text {
     font-size: 28px;
-    fill: #000; /* Text color */
+    fill: #000;
+ /* Text color */
     font-weight: bold;
 }
 
@@ -459,7 +480,8 @@ box-shadow: 10px 5px 5px black;
 /* Specific styles for the centered main station */
 .center {
     display: block;
-    font-size: 28px;  /* Adjust font size if needed */
+    font-size: 28px;
+  /* Adjust font size if needed */
     animation: rainbowCurve 5s infinite;
     position: absolute;
     top: 50%;
@@ -470,7 +492,8 @@ box-shadow: 10px 5px 5px black;
 /* Apply the rainbow effect only when a station is selected */
 .rainbow-curve {
     display: block;
-    font-size: 28px;  /* Adjust font size if needed */
+    font-size: 28px;
+  /* Adjust font size if needed */
     animation: rainbowCurve 5s infinite;
 }
 
@@ -478,15 +501,17 @@ box-shadow: 10px 5px 5px black;
 @keyframes rainbowCurve {
     0% {
         transform: translateY(0);
-/*        background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);*/
+/*        background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);*/;
     }
+
     50% {
         transform: translateY(-10px);
-/*        background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);*/
+/*        background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);*/;
     }
+
     100% {
         transform: translateY(0);
-/*        background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);*/
+/*        background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);*/;
     }
 }
 
@@ -496,7 +521,7 @@ box-shadow: 10px 5px 5px black;
     font-size: 53px;
     margin-top: -910px;
     transform: rotate(-1 * angle / 2);
-/*transform: rotate(calc(180deg / var(--lettersCount) * var(--index)));*/
+/*transform: rotate(calc(180deg / var(--lettersCount) * var(--index)));*/;
 }
 
 #stationDisplayBottom {
@@ -505,6 +530,77 @@ box-shadow: 10px 5px 5px black;
     margin-top: 1000px;
 }
 
+
+@media only screen and (max-width: 1920px){
+    .heading h2 {
+    font-size: 28px;
+    width: 458px;
+}
+.box2 {
+    margin-top: 688px;
+}
+.para p {
+    font-size: 20px;
+    font-weight: 400;
+}
+#nextButton {
+    padding: 25px 31px;
+    font-size: 28px;
+}
+.box4 {
+    margin-top: 780px;
+}
+.gifarrow {
+    width: 44px;
+    margin-top: 189px;
+}
+.station-sel h2 {
+    font-family: "Lexend Deca";
+    font-size: 36px;
+    margin-bottom: 33px;
+    display: flex;
+    align-items: center;
+}
+.popup-content {
+    width: 74%;
+}
+.line h3 {
+    font-size: 33px;
+    margin-bottom: 30px;
+}
+.line button {
+    width: 80%;
+    padding: 20px;
+    font-size: 18px;
+}
+.text-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 38px;
+}
+.box {
+    position: relative;
+    height: 450px;
+}
+#stationDisplayTop {
+    margin-top: -450px;
+}
+#stationDisplayBottom {
+    margin-top: 538px;
+}
+.arrow {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-right: -2px;
+}
+#startJourneyButton {
+    margin-top: 20px;
+    padding: 19px 49px;
+    font-size: 25px;
+}
+}
 
 
 
@@ -530,18 +626,17 @@ box-shadow: 10px 5px 5px black;
         width: 100%;
         margin-top: -23px;
         margin-bottom: 47px;
-        background-color: rgba(255, 255, 255, 0.4); /* Light transparent white */
+        background-color: rgba(255, 255, 255, 0.4);
+ /* Light transparent white */;
     }
 
-        .box4 {
+    .box4 {
         width: 45%;
         margin-top: 156px;
         float: right;
         display: block;
         margin-right: -188px;
     }
-
-
 
     .box img {
         height: 473px;
@@ -585,16 +680,16 @@ box-shadow: 10px 5px 5px black;
     }
 
     .heading h2 {
-    text-align: justify;
-    font-family: "Lexend Deca";
-    font-size: 22px;
-    font-weight: 600;
-    color: #945B2B;
+        text-align: justify;
+        font-family: "Lexend Deca";
+        font-size: 22px;
+        font-weight: 600;
+        color: #945B2B;
     /* left: 10px; */
     /* margin-left: -352px; */
-    width: 100%;
-    margin-bottom: -7px;
-}
+        width: 100%;
+        margin-bottom: -7px;
+    }
 
     .para p {
         font-size: 22px;
@@ -612,14 +707,14 @@ box-shadow: 10px 5px 5px black;
         align-items: flex-start;
     }
 
-        .station-sel h2 {
+    .station-sel h2 {
         font-size: 16px;
         margin-bottom: 12px;
     }
 
     .line h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+        font-size: 20px;
+        margin-bottom: 10px;
     }
 
     .line button {
@@ -628,8 +723,10 @@ box-shadow: 10px 5px 5px black;
     }
 
     .popup-section {
-        max-height: 80vh; /* Adjust height for mobile view */
-        overflow-y: scroll; /* Ensure scrolling on small screens */
+        max-height: 80vh;
+ /* Adjust height for mobile view */
+        overflow-y: scroll;
+ /* Ensure scrolling on small screens */;
     }
 
     .line {
@@ -640,6 +737,9 @@ box-shadow: 10px 5px 5px black;
         font-size: 20px;
     }
 }
+
+
+
 
 /* Media Query for Extra Small Screens (Very small mobile or portrait mode) */
 @media only screen and (max-width: 480px) {
@@ -657,8 +757,6 @@ box-shadow: 10px 5px 5px black;
         margin-bottom: 10px;
     }
 
-  
-
     .heading h2 {
         font-size: 20px;
         padding-left: 16px;
@@ -674,7 +772,7 @@ box-shadow: 10px 5px 5px black;
         font-size: 24px;
     }
 
-        #nextButton {
+    #nextButton {
         padding: 15px 30px;
         font-size: 11px;
     }

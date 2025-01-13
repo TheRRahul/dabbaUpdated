@@ -25,6 +25,10 @@
   </script>
 </head>
 <body>
+
+    <audio id="pageLoadAudio" src="sound/voice-station.mp3" autoplay preload="auto"></audio>
+
+
   <div class="background">
     <div class="text_box">
       <h3 class="journey_text">THE DABBA JOURNEY</h3>
@@ -69,7 +73,7 @@
             </div>
             <!-- Image container on the right -->
             <div class="timeline-image">
-              <img src="images/dabbaicon.png" class="timeline-img">
+              <img src="images/dabba_gif.gif" class="timeline-img">
             </div>
           </div>
 
@@ -84,7 +88,7 @@
             </div>
             <!-- Image container on the right -->
             <div class="timeline-image">
-              <img src="images/dabbaicon.png" class="timeline-img">
+                <img src="images/dabba_gif.gif" class="timeline-img">
             </div>
           </div>
 
@@ -99,7 +103,7 @@
             </div>
             <!-- Image container on the right -->
             <div class="timeline-image">
-              <img src="images/dabbaicon.png" class="timeline-img">
+                <img src="images/dabba_gif.gif" class="timeline-img">
             </div>
           </div>
 
@@ -114,7 +118,7 @@
             </div>
             <!-- Image container on the right -->
             <div class="timeline-image">
-              <img src="images/dabbaicon.png" class="timeline-img">
+              <img src="images/dabba_gif.gif" class="timeline-img">
             </div>
           </div>
 
@@ -129,7 +133,7 @@
             </div>
             <!-- Image container on the right -->
             <div class="timeline-image">
-              <img src="images/dabbaicon.png" class="timeline-img">
+              <img src="images/dabba_gif.gif" class="timeline-img">
             </div>
           </div>
 
@@ -144,7 +148,7 @@
             </div>
             <!-- Image container on the right -->
             <div class="timeline-image">
-              <img src="images/dabbaicon.png" class="timeline-img">
+              <img src="images/dabba_gif.gif" class="timeline-img">
             </div>
           </div>
 
@@ -159,7 +163,7 @@
             </div>
             <!-- Image container on the right -->
             <div class="timeline-image">
-              <img src="images/dabbaicon.png" class="timeline-img">
+              <img src="images/dabba_gif.gif" class="timeline-img">
             </div>
           </div>
         </div>
@@ -366,5 +370,26 @@
       window.location.href = `invoice.html${lang ? '?lang=' + lang : ''}`; 
     }, 30000);
   </script>
+
+<script>
+  // Function to play the audio
+  function playAudio() {
+    const audio = document.getElementById('pageLoadAudio');
+    audio.play().catch(error => {
+      console.warn('Autoplay blocked by browser. Audio did not play.', error);
+    });
+  }
+
+  // Try to autoplay the audio on page load
+  window.addEventListener('load', () => {
+    // Play immediately on page load
+    playAudio();
+
+    // Set an interval to play the sound every 10 seconds (10000ms)
+    setInterval(() => {
+      playAudio();
+    }, 20000);  // 10000ms = 10 seconds
+  });
+</script>
 </body>
 </html>
